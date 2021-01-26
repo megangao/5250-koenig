@@ -18,4 +18,10 @@
     <Folder Include="Views\Game\" />
     <Folder Include="Views\Items\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Items\ItemReadPage %28copy%29.xaml.cs">
+      <DependentUpon>ItemReadPage %28copy%29.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
