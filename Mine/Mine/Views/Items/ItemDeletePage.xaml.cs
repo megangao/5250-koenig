@@ -47,7 +47,7 @@ namespace Mine.Views
         }
 
         /// <summary>
-        /// Confirm the Delete for this item
+        /// Delete this item
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
