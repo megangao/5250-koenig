@@ -38,5 +38,15 @@ namespace Mine.Views
         {
             await Navigation.PopModalAsync();
         }
+
+        /// <summary>
+        /// Update the Display Value when the Stepper Changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ValueValue.Text = String.Format("{0}", e.NewValue);
+        }
     }
 }
