@@ -7,6 +7,7 @@ namespace UnitTests.Helpers
     [TestFixture]
     public class DiceHelperTests
     {
+        // INVALID PARAMS
         [Test]
         public void RollDice_Invalid_Roll_Zero_Should_Return_Zero()
         {
@@ -35,6 +36,7 @@ namespace UnitTests.Helpers
             Assert.AreEqual(0, result);
         }
 
+        // BOUNDARIES
         [Test]
         public void RollDice_Valid_Roll_1_Dice_6_Should_Return_Between_1_And_6()
         {
@@ -63,6 +65,24 @@ namespace UnitTests.Helpers
             // Assert 
             Assert.AreEqual(true, result >= 2);
             Assert.AreEqual(true, result <= 12);
+        }
+
+        // FORCED VALUES
+        [Test]
+        public void RollDice_Valid_Roll_1_Dice_10_Forced_5_Should_Return_5()
+        {
+            // Arrange
+            DiceHelper.ForceRollsToNotRandom = true;
+            DiceHelper.ForcedRandomValue = 5;
+
+            // Act
+            var result = DiceHelper.RollDice(1, 10);
+
+            // Reset
+            DiceHelper.ForceRollsToNotRandom = false;
+
+            // Assert 
+            Assert.AreEqual(5, result);
         }
 
         [Test]
