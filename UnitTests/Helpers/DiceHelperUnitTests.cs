@@ -9,7 +9,7 @@ namespace UnitTests.Helpers
     {
         // BOUNDARIES
         [Test]
-        public void RollDice_Invalid_Roll_Zero_Should_Return_Zero()
+        public void RollDice_Invalid_Roll_0_Dice_1_Should_Return_Zero()
         {
             // Arrange
 
